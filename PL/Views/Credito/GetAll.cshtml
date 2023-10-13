@@ -1,0 +1,55 @@
+﻿@model ML.Credito
+@{
+    ViewBag.Title = "GetAll";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>GetAll</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Creditos</h2>
+        </div>
+    </div>
+
+    @if(Model.Creditos != null)
+    {
+        <div class="row">
+            <div class="col-md-12">
+                <div>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+
+                                <th>NumeroCredito </th>
+                                <th>ImporteCredito </th>
+                                <th>Plazo </th>
+                                <th>TasaAnual </th>
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                            @foreach (ML.Credito credito in Model.Creditos)
+                            {
+
+                                <tr>
+
+                                    <td>@credito.NumeroCredito </td>
+                                    <td>@credito.ImporteCredito </td>
+                                    <td>@credito.PLazo </td>
+                                    <td>@credito.TasaAnual </td>
+                                </tr>
+
+
+                            }
+                            @*<td></td>*@
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+
+
+</div>
